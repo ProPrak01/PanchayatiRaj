@@ -180,7 +180,7 @@ public class Grid
         }
         return adjacentCells;
     }
-
+     
     /// <summary>
     /// Returns array [Left neighbour, Top neighbour, Right neighbour, Down neighbour]
     /// </summary>
