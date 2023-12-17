@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SVS;
 using UnityEngine;
 
 public class RoadManager : MonoBehaviour
@@ -45,7 +46,24 @@ public class RoadManager : MonoBehaviour
         {
             placementManager.removeAllTemporaryStructures();
             temporaryPlacementPosition.Clear();
+
+            foreach (var positionsToFix in roadPositiontoRecheck)
+            {
+                roadFixer.FixRoadAtPosition(placementManager, positionsToFix);
+            }
+
             roadPositiontoRecheck.Clear();
+
+            temporaryPlacementPosition = placementManager.getPathBetween(startPosition, position);
+
+            foreach (var temporaryPosition in temporaryPlacementPosition)
+            {
+                if (placementManager.CheckIfPositionIsFree(temporaryPosition) == false)
+                {
+                    continue;
+                }
+                placementManager.PlaceTemporaryStructure(temporaryPosition, roadFixer.deadEnd, CellType.Road);
+            }
         }
         FixRoadPrefab();
 
@@ -61,6 +79,10 @@ public class RoadManager : MonoBehaviour
             var neighbours = placementManager.GetNeighboursOfTypeFor(temporaryPosition,CellType.Road);
             foreach (var roadposition in neighbours)
             {
+                if(roadPositiontoRecheck.Contains(roadposition) == false)
+                {
+                    roadPositiontoRecheck.Add(roadposition);
+                }
                 roadPositiontoRecheck.Add(roadposition);
             }
             
@@ -71,5 +93,16 @@ public class RoadManager : MonoBehaviour
             roadFixer.FixRoadAtPosition(placementManager, positionToFix);
         }
         
+    }
+    public void FinishPlacingRoad()
+    {
+        placementMode = false;
+        placementManager.AddtemporaryStructuresToStructureDictionary();
+        if(temporaryPlacementPosition.Count > 0)
+        {
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+        temporaryPlacementPosition.Clear();
+        startPosition = Vector3Int.zero;
     }
 }

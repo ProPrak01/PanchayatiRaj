@@ -10,6 +10,7 @@ public class PlacementManager : MonoBehaviour
     Grid placementGrid;
 
     private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
+    private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
 
     private void Start()
     {
@@ -61,6 +62,10 @@ public class PlacementManager : MonoBehaviour
         {
             temporaryRoadobjects[position].SwapModel(newModel, rotation);
         }
+        else if (structureDictionary.ContainsKey(position))
+        {
+            structureDictionary[position].SwapModel(newModel, rotation);
+        }
     }
 
     internal CellType[] GetNeighbourTypesFor(Vector3Int position)
@@ -83,6 +88,38 @@ public class PlacementManager : MonoBehaviour
     }
 
     internal void removeAllTemporaryStructures()
+    {
+        foreach (var structure in temporaryRoadobjects.Values)
+        {
+            var position = Vector3Int.RoundToInt(structure.transform.position);
+            placementGrid[position.x, position.z] = CellType.Empty;
+            Destroy(structure.gameObject);
+        }
+        temporaryRoadobjects.Clear();
+    }
+
+    internal List<Vector3Int> getPathBetween(Vector3Int startPosition, Vector3Int endposition)
+    {
+        var resultPath = GridSearch.AStarSearch(placementGrid, new Point(startPosition.x, startPosition.z),new Point(endposition.x,endposition.z));
+        List<Vector3Int> path = new List<Vector3Int>();
+        foreach (Point point  in resultPath)
+        {
+            path.Add(new Vector3Int(point.X, 0, point.Y));
+        }
+        return path;
+    }
+
+    internal void AddtemporaryStructuresToStructureDictionary()
+    {
+
+        foreach (var structure in temporaryRoadobjects)
+        {
+            structureDictionary.Add(structure.Key, structure.Value);
+        }
+        temporaryRoadobjects.Clear();
+    }
+
+    internal void PlaceObjectOnTheMap(Vector3Int position, GameObject prefab, CellType structure)
     {
         throw new NotImplementedException();
     }
