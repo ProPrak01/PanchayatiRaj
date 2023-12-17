@@ -22,10 +22,10 @@ public class PlacementManager : MonoBehaviour
         {
             return true;
         }
-        else
-        {
+        
+        
             return false;
-        }
+        
     }
     internal bool CheckIfPositionIsFree(Vector3Int position)
     {
@@ -80,5 +80,10 @@ public class PlacementManager : MonoBehaviour
             neighbours.Add(new Vector3Int(point.X, 0, point.Y));
         }
         return neighbours;
+    }
+
+    internal void removeAllTemporaryStructures()
+    {
+        throw new NotImplementedException();
     }
 }

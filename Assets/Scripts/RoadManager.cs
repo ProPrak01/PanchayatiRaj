@@ -10,8 +10,10 @@ public class RoadManager : MonoBehaviour
     public List<Vector3Int> temporaryPlacementPosition = new List<Vector3Int>();
     public List<Vector3Int> roadPositiontoRecheck= new List<Vector3Int>();
 
+    private Vector3Int startPosition;
+    private bool placementMode = false;
 
-    public GameObject roadStraight;
+    // public GameObject roadStraight;
 
 
     public RoadFixer roadFixer;
@@ -27,11 +29,26 @@ public class RoadManager : MonoBehaviour
         {
             return;
         }
+        if (placementMode == false)
+        {
+            temporaryPlacementPosition.Clear();
+            roadPositiontoRecheck.Clear();
 
-        temporaryPlacementPosition.Clear();
-        temporaryPlacementPosition.Add(position);
-        placementManager.PlaceTemporaryStructure(position, roadStraight, CellType.Road);
+            placementMode = true;
+            startPosition = position;
+
+            temporaryPlacementPosition.Add(position);
+            placementManager.PlaceTemporaryStructure(position, roadFixer.deadEnd, CellType.Road);
+
+        }
+        else
+        {
+            placementManager.removeAllTemporaryStructures();
+            temporaryPlacementPosition.Clear();
+            roadPositiontoRecheck.Clear();
+        }
         FixRoadPrefab();
+
     }
 
     private void FixRoadPrefab()
@@ -40,15 +57,19 @@ public class RoadManager : MonoBehaviour
         foreach (var temporaryPosition in temporaryPlacementPosition)
         {
             roadFixer.FixRoadAtPosition(placementManager, temporaryPosition);
+            
             var neighbours = placementManager.GetNeighboursOfTypeFor(temporaryPosition,CellType.Road);
             foreach (var roadposition in neighbours)
             {
                 roadPositiontoRecheck.Add(roadposition);
             }
+            
         }
+        
         foreach (var positionToFix in roadPositiontoRecheck)
         {
             roadFixer.FixRoadAtPosition(placementManager, positionToFix);
         }
+        
     }
 }
