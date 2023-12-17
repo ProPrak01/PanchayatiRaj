@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -43,19 +44,36 @@ public class InputManager : MonoBehaviour
 
     private void CheckClickDownEvent()
     {
-        throw new NotImplementedException();
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var Position = RaycastGround();
+            if (Position != null)
+            {
+                onMouseClick?.Invoke(Position.Value);
+            }
+        }
     }
 
     private void CheckClickUpEvent()
     {
-        throw new NotImplementedException();
+        if (Input.GetMouseButtonUp(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            OnMouseUp?.Invoke();
+        }
     }
     private void CheckClickHoldEvent()
     {
-        throw new NotImplementedException();
+        if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            var Position = RaycastGround();
+            if(Position != null)
+            {
+                OnMouseHold?.Invoke(Position.Value);
+            }
+        }
     }
     private void CheckArrowInput()
     {
-        throw new NotImplementedException();
+        cameraMovementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 }
