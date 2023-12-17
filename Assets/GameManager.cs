@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public RoadManager roadManager;
 
     public UIcontroller uicontroller;
+
+    public StructureManager structureManager;
     private void Start()
     {
         uicontroller.OnRoadPlacement += RoadPlacementHandler;
@@ -22,12 +24,14 @@ public class GameManager : MonoBehaviour
 
     private void SpecialPlacementHandler()
     {
-        throw new NotImplementedException();
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceSpecial;
     }
 
     private void HousePlacementHandler()
     {
-        throw new NotImplementedException();
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceSpecial;
     }
 
     private void RoadPlacementHandler()
