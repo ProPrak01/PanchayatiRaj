@@ -37,12 +37,13 @@ public class StructureManager : MonoBehaviour
         if (checkPositionBeforePlacement(position))
         {
             int randomIndex = GetRandomWeightedIndex(specialWeights);
-            placementManager.PlaceObjectOnTheMap(position, specialPrefab[randomIndex].prefab, CellType.Structure);
-            AudioPlayer.instance.PlayPlacementSound();
+            placementManager.PlaceObjectOnTheMap(position, specialPrefab[randomIndex].prefab, CellType.SpecialStructure);
+             AudioPlayer.instance.PlayPlacementSound();
         }
     }
     private int GetRandomWeightedIndex(float[] Weights)
     {
+
         float sum = 0f;
         for(int i = 0;i< Weights.Length; i++)
         {

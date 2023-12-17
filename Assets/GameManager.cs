@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void HousePlacementHandler()
     {
         ClearInputActions();
-        inputManager.onMouseClick += structureManager.PlaceSpecial;
+        inputManager.onMouseClick += structureManager.PlaceHouse;
     }
 
     private void RoadPlacementHandler()
