@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrafficMapRoad : MonoBehaviour
 {
-    public Material originalMaterial;
-    public Material HeatMaterial;
+   // public Material originalMaterial;
+    //public Material HeatMaterial;
 
     public int Heat = 0; // Heat variable to track the cumulative heat
 
@@ -41,10 +41,11 @@ public class TrafficMapRoad : MonoBehaviour
         if (Heat >= 10)
         {
             //GetComponent<Renderer>().material.;
+            GetComponent<Renderer>().material.SetFloat("_YourFloatPropertyName", 0.1f);
         }
         else
         {
-            GetComponent<Renderer>().material = originalMaterial;
+            GetComponent<Renderer>().material.SetFloat("_YourFloatPropertyName", 10f);
         }
 
         // Debug visual of the sphere
