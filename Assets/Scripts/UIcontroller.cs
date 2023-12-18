@@ -7,8 +7,8 @@ using TMPro;
 public class UIcontroller : MonoBehaviour
 
 {
-    public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement, OnHospitalPlacement;
-    public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeHospitalButton;
+    public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement, OnHospitalPlacement, OnLakePlacement, OnWaterSupplyPlacement,OnSchoolPlacement,OnShopPlacement,OnPanchayatPlacement,OnBankPlacement, OnAanganWadiPlacement;
+    public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeHospitalButton, placeLakeButton,placeWaterSupplyButton,placeSchoolButton,placeShopButton,placePanchayatButton, placeBankButton, placeAanganWadiButton;
    
 
     public Color outlineColor;
@@ -24,11 +24,11 @@ public class UIcontroller : MonoBehaviour
         LocationsMenuUI.SetActive(false);
 
 
-        buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton , placeHospitalButton};
+        buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton , placeHospitalButton, placeLakeButton, placeWaterSupplyButton, placeSchoolButton, placeShopButton, placePanchayatButton, placeBankButton , placeAanganWadiButton };
 
         placeRoadButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
+         //   ResetButtonColor();
             ModifyOutline(placeRoadButton);
             OnRoadPlacement?.Invoke();
         });
@@ -36,23 +36,65 @@ public class UIcontroller : MonoBehaviour
 
         placeHouseButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
+         //   ResetButtonColor();
             ModifyOutline(placeHouseButton);
             OnHousePlacement?.Invoke();
         });
 
         placeSpecialButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
+          //  ResetButtonColor();
             ModifyOutline(placeSpecialButton);
             OnSpecialPlacement?.Invoke();
         });
 
         placeHospitalButton.onClick.AddListener(() =>
         {
-            ResetButtonColor();
-            ModifyOutline(placeHospitalButton);
+         //   ResetButtonColor();
+           // ModifyOutline(placeHospitalButton);
             OnHospitalPlacement?.Invoke();
+        });
+        placeLakeButton.onClick.AddListener(() =>
+        {
+          //  ResetButtonColor();
+          //  ModifyOutline(placeLakeButton);
+            OnLakePlacement?.Invoke();
+        });
+        placeWaterSupplyButton.onClick.AddListener(() =>
+        {
+           // ResetButtonColor();
+          //  ModifyOutline(placeHospitalButton);
+            OnWaterSupplyPlacement?.Invoke();
+        });
+        placeSchoolButton.onClick.AddListener(() =>
+        {
+          //  ResetButtonColor();
+           // ModifyOutline(placeSchoolButton);
+            OnSchoolPlacement?.Invoke();
+        });
+        placeShopButton.onClick.AddListener(() =>
+        {
+          //  ResetButtonColor();
+          //  ModifyOutline(placeShopButton);
+            OnShopPlacement?.Invoke();
+        });
+        placePanchayatButton.onClick.AddListener(() =>
+        {
+           // ResetButtonColor();
+           // ModifyOutline(placePanchayatButton);
+            OnPanchayatPlacement?.Invoke();
+        });
+        placeBankButton.onClick.AddListener(() =>
+        {
+           // ResetButtonColor();
+          //  ModifyOutline(placeBankButton);
+            OnBankPlacement?.Invoke();
+        });
+        placeAanganWadiButton.onClick.AddListener(() =>
+        {
+          //  ResetButtonColor();
+          //  ModifyOutline(placeAanganWadiButton);
+            OnAanganWadiPlacement?.Invoke();
         });
     }
 

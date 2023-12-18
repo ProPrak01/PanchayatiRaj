@@ -53,7 +53,20 @@ public enum CellType
     Structure,
     SpecialStructure,
     None,
-    Hospital
+    Hospital,
+    Lake,
+    WaterSupply,
+    School,
+    Shop,
+    PostOffice,
+    Panchayat,
+    Bank,
+    AanganWadi,
+    PoliceStation,
+    FireStation,
+    MeditationHall,
+    Market
+
 }
 
 public class Grid
