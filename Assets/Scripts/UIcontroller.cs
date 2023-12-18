@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-
+using TMPro;
 public class UIcontroller : MonoBehaviour
-{
-    public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement;
-    public Button placeRoadButton, placeHouseButton, placeSpecialButton;
 
+{
+    public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement, OnHospitalPlacement;
+    public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeHospitalButton;
+   
 
     public Color outlineColor;
     List<Button> buttonList;
 
+    public GameObject BuildMenuUI;
+    public GameObject LocationsMenuUI;
+
+
     private void Start()
     {
-        buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton };
+        BuildMenuUI.SetActive(false);
+        LocationsMenuUI.SetActive(false);
+
+
+        buttonList = new List<Button> { placeHouseButton, placeRoadButton, placeSpecialButton , placeHospitalButton};
 
         placeRoadButton.onClick.AddListener(() =>
         {
@@ -38,6 +47,13 @@ public class UIcontroller : MonoBehaviour
             ModifyOutline(placeSpecialButton);
             OnSpecialPlacement?.Invoke();
         });
+
+        placeHospitalButton.onClick.AddListener(() =>
+        {
+            ResetButtonColor();
+            ModifyOutline(placeHospitalButton);
+            OnHospitalPlacement?.Invoke();
+        });
     }
 
     private void ModifyOutline(Button button)
@@ -54,5 +70,21 @@ public class UIcontroller : MonoBehaviour
         {
             button.GetComponent<Outline>().enabled = false;
         }
+    }
+    public void CloseBuildMenuButton()
+    {
+        BuildMenuUI.SetActive(false);
+    }
+    public void OpenBuildMenu()
+    {
+        BuildMenuUI.SetActive(true);
+    }
+    public void CloseLocationsMenuButton()
+    {
+        BuildMenuUI.SetActive(false);
+    }
+    public void OpenLocationsMenu()
+    {
+        LocationsMenuUI.SetActive(true);
     }
 }

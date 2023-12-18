@@ -8,7 +8,28 @@ public class CentroidDistanceCalculator : MonoBehaviour
             { 3, 5 },
             { 12, 18 },
             { 25, 9 },
-            // ... (25 coordinates here)
+            { 8, 22 },
+            { 20, 7 },
+            { 1, 15 },
+            { 16, 4 },
+            { 28, 11 },
+            { 9, 29 },
+            { 6, 26 },
+            { 14, 19 },
+            { 24, 2 },
+            { 11, 12 },
+            { 27, 23 },
+            { 5, 10 },
+            { 17, 27 },
+            { 30, 14 },
+            { 22, 6 },
+            { 4, 21 },
+            { 19, 8 },
+            { 2, 17 },
+            { 10, 25 },
+            { 21, 1 },
+            { 13, 13 },
+            { 29, 24 }
         };
 
         double[] centroid = CalculateCentroid(coordinates);
