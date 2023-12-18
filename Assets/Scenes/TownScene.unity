@@ -2539,13 +2539,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b48bb6776b234ed79de0e43e4abe201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadEnd: {fileID: 1120765361980748800, guid: 126bc1b54aa974c45b523eabbb58d51e, type: 3}
-  roadStraight: {fileID: 5661862354351878554, guid: 0cf01c743836d154eb47042e1bc62afd,
+  deadEnd: {fileID: 2503904695796016583, guid: 1c2609892162f914193a252d5b460894, type: 3}
+  roadStraight: {fileID: 7895634754030225445, guid: 1cbfac3ff96670544a2c9c5368d72610,
     type: 3}
-  corner: {fileID: 7077802812573144028, guid: fd4c97eb7b86f1149a7745204ed8904e, type: 3}
-  threeWay: {fileID: 2384947387477557946, guid: 2524a8437a2d4394da7f7a0546a71f3d,
+  corner: {fileID: 8421635355030110198, guid: 4f1a1a18486ce5d42b156b5885d6cabc, type: 3}
+  threeWay: {fileID: 3070664062685653867, guid: e687a585787837d41952437d7b7b3524,
     type: 3}
-  fourWay: {fileID: 3351635067702010651, guid: f4402828bce58b54791119f89fa2df61, type: 3}
+  fourWay: {fileID: 5648119701053341518, guid: 8205914d492cacf4192418604ca7b096, type: 3}
 --- !u!1001 &46291113
 PrefabInstance:
   m_ObjectHideFlags: 0

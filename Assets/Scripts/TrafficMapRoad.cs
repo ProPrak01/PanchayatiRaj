@@ -49,10 +49,11 @@ public class TrafficMapRoad : MonoBehaviour
         }
 
         // Debug visual of the sphere
-        DebugDrawSphere(transform.position, sphereRadius, Color.red);
+       // DebugDrawSphere(transform.position, sphereRadius, Color.red);
     }
 
     // Debug draw sphere method
+    /**
     private void DebugDrawSphere(Vector3 center, float radius, Color color)
     {
 #if UNITY_EDITOR
@@ -60,4 +61,5 @@ public class TrafficMapRoad : MonoBehaviour
         UnityEditor.Handles.DrawWireDisc(center, Vector3.up, radius);
 #endif
     }
+    **/
 }
