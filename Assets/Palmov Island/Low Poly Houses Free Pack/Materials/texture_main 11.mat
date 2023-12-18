@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: texture_main 9
+  m_Name: texture_main 11
   m_Shader: {fileID: -6465566751694194690, guid: 8f7f1b77335830444a7d7e86830f2719,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 6281366c3d0cff14d83f64cce3e5e471, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_Parent: {fileID: 2100000, guid: 9cecf7e04f9c9481aaa4776e015a02e4, type: 2}
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -27,11 +27,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _GlowOrNot: 0
-    - _Glowpower: 0.08
+    - _Glowpower: 1
     m_Colors:
-    - _RimColor: {r: 0.9529412, g: 0.1481623, b: 0.03921566, a: 1}
+    - _RimColor: {r: 0.08906565, g: 0.9529412, b: 0.03921566, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &2725202850167057111
+--- !u!114 &362571769140754207
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
