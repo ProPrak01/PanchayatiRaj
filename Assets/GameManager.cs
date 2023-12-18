@@ -20,7 +20,60 @@ public class GameManager : MonoBehaviour
         uicontroller.OnHousePlacement += HousePlacementHandler;
         uicontroller.OnSpecialPlacement += SpecialPlacementHandler;
         uicontroller.OnHospitalPlacement += HospitalPlacementHandler;
+        uicontroller.OnLakePlacement += LakePlacementHandler;
+        uicontroller.OnWaterSupplyPlacement += WaterSupplyPlacementHandler;
+        uicontroller.OnSchoolPlacement += SchoolPlacementHandler;
+        uicontroller.OnShopPlacement += ShopPlacementHandler;
+        uicontroller.OnPanchayatPlacement += PanchayatPlacementHandler;
+        uicontroller.OnHospitalPlacement += HospitalPlacementHandler;
+        uicontroller.OnBankPlacement += BankPlacementHandler;
+        uicontroller.OnAanganWadiPlacement += AanganWadiPlacementHandler;
+
+
     }
+
+    private void AanganWadiPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceAanganWadi;
+    }
+
+    private void BankPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceBank;
+    }
+
+    private void PanchayatPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlacePanchayat;
+    }
+
+    private void ShopPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceShop;
+    }
+
+    private void SchoolPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceSchool;
+    }
+
+    private void WaterSupplyPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceWaterSupply;
+    }
+
+    private void LakePlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceLake;
+    }
+
     private void HospitalPlacementHandler()
     {
         ClearInputActions();
