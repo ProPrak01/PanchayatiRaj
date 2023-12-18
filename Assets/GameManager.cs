@@ -19,9 +19,13 @@ public class GameManager : MonoBehaviour
         uicontroller.OnRoadPlacement += RoadPlacementHandler;
         uicontroller.OnHousePlacement += HousePlacementHandler;
         uicontroller.OnSpecialPlacement += SpecialPlacementHandler;
-
+        uicontroller.OnHospitalPlacement += HospitalPlacementHandler;
     }
-
+    private void HospitalPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceHospital;
+    }
     private void SpecialPlacementHandler()
     {
         ClearInputActions();

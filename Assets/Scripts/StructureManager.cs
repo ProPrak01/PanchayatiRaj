@@ -7,12 +7,14 @@ using UnityEngine;
 
 public class StructureManager : MonoBehaviour
 {
+    public GameObject Hospital;
 
     public StructurePrefabWeighted[] housePrefab, specialPrefab;
     public PlacementManager placementManager;
 
 
     private float[] houseWeights, specialWeights;
+
 
 
     private void Start()
@@ -28,6 +30,16 @@ public class StructureManager : MonoBehaviour
         {
             int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, housePrefab[randomIndex].prefab, CellType.Structure);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+    public void PlaceHospital(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+           // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, Hospital, CellType.Hospital);
             AudioPlayer.instance.PlayPlacementSound();
         }
     }

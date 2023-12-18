@@ -85,4 +85,39 @@ public class GridSearch {
         }
         return path;
     }
+
+    /**
+
+
+    public static int[,] GetGridInfo(Grid grid)
+    {
+        int[,] gridInfo = new int[grid.Width, grid.Height];
+
+        for (int x = 0; x < grid.Width; x++)
+        {
+            for (int z = 0; z < grid.Height; z++)
+            {
+                int itemType = ItemPlacedOn(grid, x, z);
+                gridInfo[x, z] = itemType;
+            }
+        }
+
+        return gridInfo;
+    }
+
+
+    private static int ItemPlacedOn(Grid grid, int x, int z)
+    {
+        // This function should be implemented based on your game logic.
+        // It can return a value between 0-10, representing different types of items on the grid.
+        // Modify this function according to your specific requirements.
+
+        // Example: Placeholder implementation, always returning 0.
+        return 0;
+    }
+
+    **/
+
+
 }
+ 

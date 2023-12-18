@@ -52,7 +52,8 @@ public enum CellType
     Road,
     Structure,
     SpecialStructure,
-    None
+    None,
+    Hospital
 }
 
 public class Grid
