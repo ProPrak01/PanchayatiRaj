@@ -13,6 +13,8 @@ public class PlacementManager : MonoBehaviour
     private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
     private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
 
+
+
     private void Start()
     {
         placementGrid = new Grid(width, height);
@@ -163,7 +165,7 @@ public class PlacementManager : MonoBehaviour
             avgZ += pair.Key.y;
         }
         avgX = avgX / structureDictionary.Count;
-        avgX = avgZ / structureDictionary.Count;
+        avgZ = avgZ / structureDictionary.Count;
 
         float[] centroid = { avgX, avgZ };
 

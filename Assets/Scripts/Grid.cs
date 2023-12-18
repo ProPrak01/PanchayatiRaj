@@ -65,7 +65,9 @@ public enum CellType
     PoliceStation,
     FireStation,
     MeditationHall,
-    Market
+    Market,
+    House1,
+    House2
 
 }
 

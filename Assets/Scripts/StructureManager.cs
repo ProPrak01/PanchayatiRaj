@@ -15,8 +15,13 @@ public class StructureManager : MonoBehaviour
     public GameObject PostOffice;
     public GameObject Panchayat;
     public GameObject Bank;
-
+    public GameObject PoliceStation;
+    public GameObject FireStation;
+    public GameObject MeditationHall;
+    public GameObject Market;
     public GameObject AananWadi;
+    public GameObject Home1;
+    public GameObject Home2;
 
 
     public StructurePrefabWeighted[] housePrefab, specialPrefab;
@@ -33,6 +38,78 @@ public class StructureManager : MonoBehaviour
         specialWeights = specialPrefab.Select(prefabStats => prefabStats.weight).ToArray();
 
     }
+
+
+
+
+
+    internal void PlaceHouse1(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, Home1, CellType.House1);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+    internal void PlaceHouse2(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, Home2, CellType.House2);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+
+
+
+
+
+    internal void PlaceMarket(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, Market, CellType.Market);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+    internal void PlaceMeditationHall(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.MeditationHall);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+    internal void PlaceFireStation(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.FireStation);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+    internal void PlacePoliceStation(Vector3Int position)
+    {
+        if (checkPositionBeforePlacement(position))
+        {
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            placementManager.PlaceObjectOnTheMap(position, PoliceStation, CellType.PoliceStation);
+            AudioPlayer.instance.PlayPlacementSound();
+        }
+    }
+
+
+
     internal void PlaceAanganWadi(Vector3Int position)
     {
         if (checkPositionBeforePlacement(position))
@@ -178,7 +255,7 @@ public class StructureManager : MonoBehaviour
 
     }
 
-   
+    
 }
 [Serializable]
 

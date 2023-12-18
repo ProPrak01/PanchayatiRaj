@@ -28,8 +28,49 @@ public class GameManager : MonoBehaviour
         uicontroller.OnHospitalPlacement += HospitalPlacementHandler;
         uicontroller.OnBankPlacement += BankPlacementHandler;
         uicontroller.OnAanganWadiPlacement += AanganWadiPlacementHandler;
+        uicontroller.OnPoliceStationPlacement += PoliceStationPlacementHandler;
+        uicontroller.OnFireStationPlacement += FireStationPlacementHandler;
+        uicontroller.OnMeditationHallPlacement += MeditationHallPlacementHandler;
+        uicontroller.OnMarketHallPlacement += MarketHallPlacementHandler;
+        uicontroller.OnHouse1Placement += House1PlacementHandler;
+        uicontroller.OnHouse2Placement += House2PlacementHandler;
 
+    }
 
+    private void House2PlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceHouse1;
+    }
+
+    private void House1PlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceHouse2;
+    }
+
+    private void MarketHallPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceMarket;
+    }
+
+    private void MeditationHallPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceMeditationHall;
+    }
+
+    private void FireStationPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlaceFireStation;
+    }
+
+    private void PoliceStationPlacementHandler()
+    {
+        ClearInputActions();
+        inputManager.onMouseClick += structureManager.PlacePoliceStation;
     }
 
     private void AanganWadiPlacementHandler()
