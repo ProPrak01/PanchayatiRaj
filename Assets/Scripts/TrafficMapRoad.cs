@@ -11,6 +11,8 @@ public class TrafficMapRoad : MonoBehaviour
 
     // Define the radius of the imaginary sphere
     public float sphereRadius = 5f;
+ 
+    
 
     private void Update()
     {
@@ -33,6 +35,81 @@ public class TrafficMapRoad : MonoBehaviour
             {
                 Heat += 7;
             }
+            else if (collider.CompareTag("Overhead Tank"))
+            {
+                
+
+            }
+            else if (collider.CompareTag("Tap Connection"))
+            {
+
+            }
+            else if (collider.CompareTag("Water Treatment Plant"))
+            {
+
+            }
+            else if (collider.CompareTag("Transformer"))
+            {
+
+            }
+            else if (collider.CompareTag("Wind Mill"))
+            {
+
+            }
+            else if (collider.CompareTag("Solar Power Plant"))
+            {
+
+            }
+            else if (collider.CompareTag("Biogas Plant"))
+            {
+
+            }
+            else if (collider.CompareTag("Sanitation Plant"))
+            {
+
+            }
+            else if (collider.CompareTag("Public Toilet"))
+            {
+
+            }
+            else if (collider.CompareTag("Fire Station"))
+            {
+
+            }
+            else if (collider.CompareTag("Post Office"))
+            {
+
+            }
+            else if (collider.CompareTag("Police Station"))
+            {
+
+            }
+            else if (collider.CompareTag("CSC"))
+            {
+
+            }
+            else if (collider.CompareTag("Bank"))
+            {
+
+            }
+            else if (collider.CompareTag("Panchayat Bhavan"))
+            {
+
+            }
+            else if (collider.CompareTag("Cremation Ground"))
+            {
+
+            }
+            else if (collider.CompareTag("Anganwadi"))
+            {
+
+            }
+            else if (collider.CompareTag("School"))
+            {
+
+            }
+
+            else if()
 
             // You can add more conditions for other tags as needed
         }
