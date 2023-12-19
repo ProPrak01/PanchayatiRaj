@@ -10,8 +10,8 @@ public class StructureManager : MonoBehaviour
 
     public CostManagement costmanagement;
     public LaborManager laborManager;
-
-
+    // public int countHouse = 0;
+    public List<Vector3> House = new List<Vector3>();
 
     public GameObject Hospital;
     public GameObject Lake;
@@ -60,6 +60,7 @@ public class StructureManager : MonoBehaviour
         }
         if (checkPositionBeforePlacement(position))
         {
+            House.Add(position);
             laborManager.AssignLaborForStructure(1,3);
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Home1, CellType.House1);
@@ -79,6 +80,8 @@ public class StructureManager : MonoBehaviour
         }
         if (checkPositionBeforePlacement(position))
         {
+            House.Add(position);
+
             laborManager.AssignLaborForStructure(1, 3);
 
             // int randomIndex = GetRandomWeightedIndex(houseWeights);

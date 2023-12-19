@@ -34,7 +34,7 @@ public class UIcontroller : MonoBehaviour
         {
             //   ResetButtonColor();
             
-            ModifyOutline(placeHouse2Button);
+           // ModifyOutline(placeHouse2Button);
 
             OnHouse2Placement?.Invoke();
         });
@@ -44,7 +44,7 @@ public class UIcontroller : MonoBehaviour
             //   ResetButtonColor();
           
 
-            ModifyOutline(placeHouse1Button);
+           // ModifyOutline(placeHouse1Button);
             OnHouse1Placement?.Invoke();
         });
 
@@ -56,7 +56,7 @@ public class UIcontroller : MonoBehaviour
             //   ResetButtonColor();
           
 
-            ModifyOutline(placeMarketButton);
+           // ModifyOutline(placeMarketButton);
             OnMarketHallPlacement?.Invoke();
         });
 
@@ -68,7 +68,7 @@ public class UIcontroller : MonoBehaviour
           
 
 
-            ModifyOutline(placePoliceStationButton);
+           // ModifyOutline(placePoliceStationButton);
             OnPoliceStationPlacement?.Invoke();
         });
 
@@ -78,7 +78,7 @@ public class UIcontroller : MonoBehaviour
 
 
             //   ResetButtonColor();
-            ModifyOutline(placeMeditationButton);
+           // ModifyOutline(placeMeditationButton);
             OnMeditationHallPlacement?.Invoke();
         });
 
@@ -88,7 +88,7 @@ public class UIcontroller : MonoBehaviour
 
 
             //   ResetButtonColor();
-            ModifyOutline(placeFireStationButton);
+           // ModifyOutline(placeFireStationButton);
             OnFireStationPlacement?.Invoke();
         });
 
@@ -99,7 +99,7 @@ public class UIcontroller : MonoBehaviour
 
 
             //   ResetButtonColor();
-            ModifyOutline(placeRoadButton);
+           // ModifyOutline(placeRoadButton);
             OnRoadPlacement?.Invoke();
         });
 
@@ -107,14 +107,14 @@ public class UIcontroller : MonoBehaviour
         placeHouseButton.onClick.AddListener(() =>
         {
          //   ResetButtonColor();
-            ModifyOutline(placeHouseButton);
+          //  ModifyOutline(placeHouseButton);
             OnHousePlacement?.Invoke();
         });
 
         placeSpecialButton.onClick.AddListener(() =>
         {
           //  ResetButtonColor();
-            ModifyOutline(placeSpecialButton);
+          //  ModifyOutline(placeSpecialButton);
             OnSpecialPlacement?.Invoke();
         });
 
@@ -209,7 +209,7 @@ public class UIcontroller : MonoBehaviour
     }
     public void CloseLocationsMenuButton()
     {
-        BuildMenuUI.SetActive(false);
+        LocationsMenuUI.SetActive(false);
     }
     public void OpenLocationsMenu()
     {

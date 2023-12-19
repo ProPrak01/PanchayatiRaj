@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class PlacementManager : MonoBehaviour
 {
-
+    public ClusterAnalysis algoScript;
+    public StructureManager structureManager;
+    
     public int width, height;
     Grid placementGrid;
     public TextMeshProUGUI textOutputLocations;
 
     private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
-    private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
+    public Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
 
 
 
@@ -151,6 +154,88 @@ public class PlacementManager : MonoBehaviour
             // Log key and value to the Unity console
             textOutputLocations.text += $" Key: {key}, Value: {value} \n";
             //Debug.Log($"Key: {key}, Value: {value}");
+        }
+    }
+    public void ConvertStructureToHouseCoordinatesandGetCluster()
+    {
+        /**
+        int count = 0 ;
+        foreach (var pair in structureDictionary)
+        {
+            Vector3Int key = pair.Key;
+
+
+            StructureModel value = pair.Value;
+
+            if (value.gameObject.tag == "Home1" || value.gameObject.tag == "Home1")
+            {
+                
+                count++;
+            }
+
+            // Log key and value to the Unity console
+         //   textOutputLocations.text += $" Key: {key}, Value: {value} \n";
+            //Debug.Log($"Key: {key}, Value: {value}");
+        }
+        //Debug.Log(count);
+        Vector3[] AllHouses = new Vector3[count];
+        int i = 0;
+        foreach (var pair in structureDictionary)
+        {
+            
+            Vector3Int key = pair.Key;
+
+
+            StructureModel value = pair.Value;
+            
+
+            if(value.gameObject.tag == "Home1" || value.gameObject.tag == "Home2")
+            {
+                AllHouses[i] = key;
+            }
+            i++;
+           
+            // Log key and value to the Unity console
+            Debug.Log($"Key: {key}, Value: {value}");
+        }
+       // textOutputLocations.text = AllHouses.Length.ToString();
+        //  Debug.Log(algoScript.GetCluster(AllHouses));
+        //  Dictionary<string, List<Vector3>> ClusterPoints = new Dictionary<string, List<Vector3>>();
+        // textOutputLocations.text += $" Key: {key}, Value: {value} \n";
+        /**
+         ClusterPoints = algoScript.GetCluster(AllHouses);
+
+         foreach (var points in ClusterPoints)
+         {
+             textOutputLocations.text += $"Key: {points.Key}, Value: ";
+
+             foreach (var vector3Point in points.Value)
+             {
+                 textOutputLocations.text += $"{vector3Point}, ";
+             }
+
+             
+             // Add a line break for the next key-value pair
+             //textOutputLocations.text += "\n";
+         }
+        **/
+        
+        Dictionary<string, List<Vector3>> ClusterPoints = new Dictionary<string, List<Vector3>>();
+
+        ClusterPoints = algoScript.GetCluster(structureManager.House);
+
+        foreach (var points in ClusterPoints)
+        {
+            textOutputLocations.text += $"Key: {points.Key}, Value: ";
+
+            foreach (var vector3Point in points.Value)
+            {
+                textOutputLocations.text += $"{vector3Point}, ";
+            }
+
+
+            // Add a line break for the next key-value pair
+            //textOutputLocations.text += "\n";
         }
     }
 
