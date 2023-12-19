@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6352848666052028670}
   m_Layer: 0
   m_Name: School
-  m_TagString: Untagged
+  m_TagString: School
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

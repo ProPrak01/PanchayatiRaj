@@ -7,6 +7,19 @@ TagManager:
   - Bank
   - Market
   - Hospital
+  - AanganWadi
+  - Dhaba
+  - FireStation
+  - Home1
+  - Home2
+  - PoliceStation
+  - MeditationHall
+  - Shop
+  - PostOffice
+  - WaterSupply
+  - Panchayat
+  - School
+  - Lake
   layers:
   - Default
   - TransparentFX

@@ -4,9 +4,14 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+
+
 public class UIcontroller : MonoBehaviour
 
 {
+
+    public CostManagement costmanagement;
+
     public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement, OnHospitalPlacement, OnLakePlacement, OnWaterSupplyPlacement,OnSchoolPlacement,OnShopPlacement,OnPanchayatPlacement,OnBankPlacement, OnAanganWadiPlacement, OnPoliceStationPlacement, OnFireStationPlacement, OnMeditationHallPlacement, OnMarketHallPlacement, OnHouse1Placement, OnHouse2Placement;
     public Button placeRoadButton, placeHouseButton, placeSpecialButton, placeHospitalButton, placeLakeButton,placeWaterSupplyButton,placeSchoolButton,placeShopButton,placePanchayatButton, placeBankButton, placeAanganWadiButton, placePoliceStationButton, placeFireStationButton, placeMeditationButton, placeMarketButton, placeHouse1Button, placeHouse2Button;
    
@@ -29,28 +34,29 @@ public class UIcontroller : MonoBehaviour
         placeHouse2Button.onClick.AddListener(() =>
         {
             //   ResetButtonColor();
+            costmanagement.DecreaseCost(1000000);
             ModifyOutline(placeHouse2Button);
+
             OnHouse2Placement?.Invoke();
         });
 
         placeHouse1Button.onClick.AddListener(() =>
         {
             //   ResetButtonColor();
+            costmanagement.DecreaseCost(1000000);
+
             ModifyOutline(placeHouse1Button);
             OnHouse1Placement?.Invoke();
         });
 
-        placeHouse1Button.onClick.AddListener(() =>
-        {
-            //   ResetButtonColor();
-            ModifyOutline(placeHouse1Button);
-            OnHouse1Placement?.Invoke();
-        });
+       
 
 
         placeMarketButton.onClick.AddListener(() =>
         {
             //   ResetButtonColor();
+            costmanagement.DecreaseCost(5000000);
+
             ModifyOutline(placeMarketButton);
             OnMarketHallPlacement?.Invoke();
         });
@@ -60,12 +66,18 @@ public class UIcontroller : MonoBehaviour
         placePoliceStationButton.onClick.AddListener(() =>
         {
             //   ResetButtonColor();
+            costmanagement.DecreaseCost(2000000);
+
+
             ModifyOutline(placePoliceStationButton);
             OnPoliceStationPlacement?.Invoke();
         });
 
         placeMeditationButton.onClick.AddListener(() =>
         {
+            costmanagement.DecreaseCost(20000000);
+
+
             //   ResetButtonColor();
             ModifyOutline(placeMeditationButton);
             OnMeditationHallPlacement?.Invoke();
@@ -73,6 +85,9 @@ public class UIcontroller : MonoBehaviour
 
         placeFireStationButton.onClick.AddListener(() =>
         {
+            costmanagement.DecreaseCost(10000000);
+
+
             //   ResetButtonColor();
             ModifyOutline(placeFireStationButton);
             OnFireStationPlacement?.Invoke();
@@ -80,7 +95,11 @@ public class UIcontroller : MonoBehaviour
 
         placeRoadButton.onClick.AddListener(() =>
         {
-         //   ResetButtonColor();
+
+
+            costmanagement.DecreaseCost(10000);
+
+            //   ResetButtonColor();
             ModifyOutline(placeRoadButton);
             OnRoadPlacement?.Invoke();
         });
@@ -102,50 +121,66 @@ public class UIcontroller : MonoBehaviour
 
         placeHospitalButton.onClick.AddListener(() =>
         {
-         //   ResetButtonColor();
-           // ModifyOutline(placeHospitalButton);
+            costmanagement.DecreaseCost(10000000);
+
+            //   ResetButtonColor();
+            // ModifyOutline(placeHospitalButton);
             OnHospitalPlacement?.Invoke();
         });
         placeLakeButton.onClick.AddListener(() =>
         {
-          //  ResetButtonColor();
-          //  ModifyOutline(placeLakeButton);
+            costmanagement.DecreaseCost(100000);
+
+            //  ResetButtonColor();
+            //  ModifyOutline(placeLakeButton);
             OnLakePlacement?.Invoke();
         });
         placeWaterSupplyButton.onClick.AddListener(() =>
         {
-           // ResetButtonColor();
-          //  ModifyOutline(placeHospitalButton);
+            costmanagement.DecreaseCost(1000000);
+
+            // ResetButtonColor();
+            //  ModifyOutline(placeHospitalButton);
             OnWaterSupplyPlacement?.Invoke();
         });
         placeSchoolButton.onClick.AddListener(() =>
         {
-          //  ResetButtonColor();
-           // ModifyOutline(placeSchoolButton);
+            costmanagement.DecreaseCost(10000000);
+
+            //  ResetButtonColor();
+            // ModifyOutline(placeSchoolButton);
             OnSchoolPlacement?.Invoke();
         });
         placeShopButton.onClick.AddListener(() =>
         {
-          //  ResetButtonColor();
-          //  ModifyOutline(placeShopButton);
+            costmanagement.DecreaseCost(100000);
+
+            //  ResetButtonColor();
+            //  ModifyOutline(placeShopButton);
             OnShopPlacement?.Invoke();
         });
         placePanchayatButton.onClick.AddListener(() =>
         {
-           // ResetButtonColor();
-           // ModifyOutline(placePanchayatButton);
+            costmanagement.DecreaseCost(1000000);
+
+            // ResetButtonColor();
+            // ModifyOutline(placePanchayatButton);
             OnPanchayatPlacement?.Invoke();
         });
         placeBankButton.onClick.AddListener(() =>
         {
-           // ResetButtonColor();
-          //  ModifyOutline(placeBankButton);
+            costmanagement.DecreaseCost(1000000);
+
+            // ResetButtonColor();
+            //  ModifyOutline(placeBankButton);
             OnBankPlacement?.Invoke();
         });
         placeAanganWadiButton.onClick.AddListener(() =>
         {
-          //  ResetButtonColor();
-          //  ModifyOutline(placeAanganWadiButton);
+            costmanagement.DecreaseCost(100000);
+
+            //  ResetButtonColor();
+            //  ModifyOutline(placeAanganWadiButton);
             OnAanganWadiPlacement?.Invoke();
         });
     }
