@@ -14,14 +14,6 @@ public class CostManagement : MonoBehaviour
     School - 30,00,000
     Lake- 10,00,000
 
-
-
-
-
-
-
-
-
     **/
     public TextMeshProUGUI CostText;
     public TextMeshProUGUI DeductMoneyShow;
@@ -49,8 +41,6 @@ public class CostManagement : MonoBehaviour
         else
         {
             Debug.Log("Insufficient funds!");
-            // Handle the situation when there are insufficient funds
-            // You might want to display a message to the user or take appropriate action
         }
     }
 
@@ -62,7 +52,6 @@ public class CostManagement : MonoBehaviour
         StartCoroutine(CallFunctionAfterDelay());
     }
 
-
     IEnumerator CallFunctionAfterDelay()
     {
         // Wait for 2 seconds
@@ -70,6 +59,11 @@ public class CostManagement : MonoBehaviour
 
         // Call your function after the delay
         DeductMoneyShow.gameObject.SetActive(false);
+    }
+
+    public bool CanAfford(int cost)
+    {
+        return InitialCost >= cost;
     }
 
 }
