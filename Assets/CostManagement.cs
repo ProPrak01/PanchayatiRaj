@@ -14,14 +14,6 @@ public class CostManagement : MonoBehaviour
     School - 30,00,000
     Lake- 10,00,000
 
-
-
-
-
-
-
-
-
     **/
     public TextMeshProUGUI CostText;
     public TextMeshProUGUI DeductMoneyShow;
@@ -39,13 +31,19 @@ public class CostManagement : MonoBehaviour
 
     public void DecreaseCost(int Value)
     {
-        InitialCost -= Value;
-        DeductMoneyShow.gameObject.SetActive(true);
-        DeductMoneyShow.text = "- Rs." +  Value.ToString() ;
-        StartCoroutine(CallFunctionAfterDelay());
-
-
+        if (InitialCost >= Value)
+        {
+            InitialCost -= Value;
+            DeductMoneyShow.gameObject.SetActive(true);
+            DeductMoneyShow.text = "- Rs." + Value.ToString();
+            StartCoroutine(CallFunctionAfterDelay());
+        }
+        else
+        {
+            Debug.Log("Insufficient funds!");
+        }
     }
+
     public void IncreaseCost(int Value)
     {
         InitialCost += Value;
@@ -54,7 +52,6 @@ public class CostManagement : MonoBehaviour
         StartCoroutine(CallFunctionAfterDelay());
     }
 
-
     IEnumerator CallFunctionAfterDelay()
     {
         // Wait for 2 seconds
@@ -62,6 +59,11 @@ public class CostManagement : MonoBehaviour
 
         // Call your function after the delay
         DeductMoneyShow.gameObject.SetActive(false);
+    }
+
+    public bool CanAfford(int cost)
+    {
+        return InitialCost >= cost;
     }
 
 }

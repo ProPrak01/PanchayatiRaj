@@ -3,7 +3,24 @@ guid: 7cb2bcc08546846a1a5095b85d7137e4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - costmanagement: {instanceID: 0}
+  - Hospital: {instanceID: 0}
+  - Lake: {instanceID: 0}
+  - WaterSupply: {instanceID: 0}
+  - School: {instanceID: 0}
+  - Shop: {instanceID: 0}
+  - PostOffice: {instanceID: 0}
+  - Panchayat: {instanceID: 0}
+  - Bank: {instanceID: 0}
+  - PoliceStation: {instanceID: 0}
+  - FireStation: {instanceID: 0}
+  - MeditationHall: {instanceID: 0}
+  - Market: {instanceID: 0}
+  - AananWadi: {instanceID: 0}
+  - Home1: {instanceID: 0}
+  - Home2: {instanceID: 0}
+  - placementManager: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
