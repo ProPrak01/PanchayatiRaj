@@ -54,10 +54,10 @@ public class CameraController : MonoBehaviour
         }
 
         // Rotate the plane around Y-axis when right mouse button is held
-        if (Input.GetMouseButton(1))
+        /*if (Input.GetMouseButton(1))
         {
             float rotationX = Input.GetAxis("Mouse X") * rotationSpeed;
             transform.Rotate(Vector3.up, rotationX, Space.World);
-        }
+        }*/
     }
 }
