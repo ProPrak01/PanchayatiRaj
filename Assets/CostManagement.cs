@@ -39,13 +39,21 @@ public class CostManagement : MonoBehaviour
 
     public void DecreaseCost(int Value)
     {
-        InitialCost -= Value;
-        DeductMoneyShow.gameObject.SetActive(true);
-        DeductMoneyShow.text = "- Rs." +  Value.ToString() ;
-        StartCoroutine(CallFunctionAfterDelay());
-
-
+        if (InitialCost >= Value)
+        {
+            InitialCost -= Value;
+            DeductMoneyShow.gameObject.SetActive(true);
+            DeductMoneyShow.text = "- Rs." + Value.ToString();
+            StartCoroutine(CallFunctionAfterDelay());
+        }
+        else
+        {
+            Debug.Log("Insufficient funds!");
+            // Handle the situation when there are insufficient funds
+            // You might want to display a message to the user or take appropriate action
+        }
     }
+
     public void IncreaseCost(int Value)
     {
         InitialCost += Value;
