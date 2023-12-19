@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class StructureManager : MonoBehaviour
 {
+
+    public CostManagement costmanagement;
+
+
+
     public GameObject Hospital;
     public GameObject Lake;
     public GameObject WaterSupply;
@@ -50,6 +55,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Home1, CellType.House1);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
         }
     }
 
@@ -60,6 +66,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Home2, CellType.House2);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
         }
     }
 
@@ -75,6 +82,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Market, CellType.Market);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(5000000);
         }
     }
 
@@ -85,6 +93,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.MeditationHall);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(20000000);
         }
     }
 
@@ -95,6 +104,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.FireStation);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(10000000);
         }
     }
 
@@ -102,9 +112,11 @@ public class StructureManager : MonoBehaviour
     {
         if (checkPositionBeforePlacement(position))
         {
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, PoliceStation, CellType.PoliceStation);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(2000000);
         }
     }
 
@@ -117,6 +129,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, AananWadi, CellType.AanganWadi);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(100000);
         }
     }
     internal void PlaceBank(Vector3Int position)
@@ -126,6 +139,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Bank, CellType.Bank);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
         }
     }
 
@@ -137,6 +151,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Panchayat, CellType.Panchayat);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
         }
     }
 
@@ -148,6 +163,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Shop, CellType.Shop);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(100000);
         }
     }
 
@@ -159,6 +175,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, School, CellType.School);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(10000000);
         }
     }
 
@@ -170,6 +187,7 @@ public class StructureManager : MonoBehaviour
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, WaterSupply, CellType.WaterSupply);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
         }
     }
 
@@ -200,6 +218,7 @@ public class StructureManager : MonoBehaviour
            // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Hospital, CellType.Hospital);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(10000000);
         }
     }
 
