@@ -168,6 +168,22 @@ public class Rules : MonoBehaviour
                     
             }
         }
+        if(building=="Water Supply")
+        {
+            if (d > (8 * clusterNo))
+            {
+                int y = (8 * clusterNo);
+                float g = (d - y) / y;
+                happinessSlider.fillAmount = g;
+            }
+
+            else if(d > (4 * clusterNo) && (d < (8 * clusterNo)))
+            {
+                int y = (4 * clusterNo);
+                float g = (d - y) / y;
+                happinessSlider.fillAmount = -(g/2-0.5f) ;
+            }
+        }
         
     }
 

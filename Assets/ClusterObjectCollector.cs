@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ClusterObjectCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rules rules;
+     // Start is called before the first frame update
     void Start()
     {
         
@@ -18,7 +19,7 @@ public class ClusterObjectCollector : MonoBehaviour
             RaycastHit hit = castray();
             if (hit.collider.tag == "gsfjls")
             {
-                hit.collider.gameObject.GetComponent<Rules>().
+              //  hit.collider.gameObject.GetComponent<Rules>().
             }
         }
 
