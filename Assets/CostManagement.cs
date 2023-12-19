@@ -24,8 +24,13 @@ public class CostManagement : MonoBehaviour
 
     **/
     public TextMeshProUGUI CostText;
+    public TextMeshProUGUI DeductMoneyShow;
 
     public int InitialCost = 10000000;
+    private void Start()
+    {
+        DeductMoneyShow.gameObject.SetActive(false);
+    }
 
     private void Update()
     {
@@ -35,11 +40,28 @@ public class CostManagement : MonoBehaviour
     public void DecreaseCost(int Value)
     {
         InitialCost -= Value;
+        DeductMoneyShow.gameObject.SetActive(true);
+        DeductMoneyShow.text = "- Rs." +  Value.ToString() ;
+        StartCoroutine(CallFunctionAfterDelay());
+
+
     }
     public void IncreaseCost(int Value)
     {
         InitialCost += Value;
+        DeductMoneyShow.gameObject.SetActive(true);
+        DeductMoneyShow.text = "+ Rs." + Value.ToString();
+        StartCoroutine(CallFunctionAfterDelay());
     }
 
+
+    IEnumerator CallFunctionAfterDelay()
+    {
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2f);
+
+        // Call your function after the delay
+        DeductMoneyShow.gameObject.SetActive(false);
+    }
 
 }
