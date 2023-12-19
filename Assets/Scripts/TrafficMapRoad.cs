@@ -109,7 +109,11 @@ public class TrafficMapRoad : MonoBehaviour
 
             }
 
+<<<<<<< Updated upstream
             
+=======
+            else if()
+>>>>>>> Stashed changes
 
             // You can add more conditions for other tags as needed
         }
