@@ -9,6 +9,8 @@ public class ClassificationScript : MonoBehaviour
 
     [Header("Model ")]
     public bool ss;
+
+    
     // Start is called before the first frame update
     void Start()
     {
