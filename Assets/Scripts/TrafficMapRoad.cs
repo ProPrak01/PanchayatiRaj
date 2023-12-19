@@ -109,7 +109,7 @@ public class TrafficMapRoad : MonoBehaviour
 
             }
 
-            else if()
+            
 
             // You can add more conditions for other tags as needed
         }
