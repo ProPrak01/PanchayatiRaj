@@ -9,8 +9,9 @@ public class StructureManager : MonoBehaviour
 {
 
     public CostManagement costmanagement;
-
-
+    public LaborManager laborManager;
+    // public int countHouse = 0;
+    public List<Vector3> House = new List<Vector3>();
 
     public GameObject Hospital;
     public GameObject Lake;
@@ -50,8 +51,17 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceHouse1(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(1000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            House.Add(position);
+            laborManager.AssignLaborForStructure(1,3);
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Home1, CellType.House1);
             AudioPlayer.instance.PlayPlacementSound();
@@ -61,8 +71,19 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceHouse2(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(1000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            House.Add(position);
+
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Home2, CellType.House2);
             AudioPlayer.instance.PlayPlacementSound();
@@ -77,8 +98,17 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceMarket(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(5000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Market, CellType.Market);
             AudioPlayer.instance.PlayPlacementSound();
@@ -88,8 +118,17 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceMeditationHall(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(20000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.MeditationHall);
             AudioPlayer.instance.PlayPlacementSound();
@@ -99,10 +138,19 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceFireStation(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(10000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
-            placementManager.PlaceObjectOnTheMap(position, MeditationHall, CellType.FireStation);
+            placementManager.PlaceObjectOnTheMap(position, FireStation, CellType.FireStation);
             AudioPlayer.instance.PlayPlacementSound();
             costmanagement.DecreaseCost(10000000);
         }
@@ -110,8 +158,16 @@ public class StructureManager : MonoBehaviour
 
     internal void PlacePoliceStation(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(2000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
 
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, PoliceStation, CellType.PoliceStation);
@@ -124,8 +180,17 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceAanganWadi(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(100000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, AananWadi, CellType.AanganWadi);
             AudioPlayer.instance.PlayPlacementSound();
@@ -134,8 +199,17 @@ public class StructureManager : MonoBehaviour
     }
     internal void PlaceBank(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(100000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Bank, CellType.Bank);
             AudioPlayer.instance.PlayPlacementSound();
@@ -145,9 +219,18 @@ public class StructureManager : MonoBehaviour
 
     internal void PlacePanchayat(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(1000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
 
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Panchayat, CellType.Panchayat);
             AudioPlayer.instance.PlayPlacementSound();
@@ -157,9 +240,18 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceShop(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(100000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
 
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Shop, CellType.Shop);
             AudioPlayer.instance.PlayPlacementSound();
@@ -169,9 +261,18 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceSchool(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(10000000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
 
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, School, CellType.School);
             AudioPlayer.instance.PlayPlacementSound();
@@ -181,9 +282,18 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceWaterSupply(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(100000))
+        {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
 
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, WaterSupply, CellType.WaterSupply);
             AudioPlayer.instance.PlayPlacementSound();
@@ -193,21 +303,41 @@ public class StructureManager : MonoBehaviour
 
     internal void PlaceLake(Vector3Int position)
     {
+        if (!costmanagement.CanAfford(1000000))
+        {
+            Debug.Log("Insufficient funds!");
 
+
+            return;
+        }
         if (checkPositionBeforePlacement(position))
         {
+            laborManager.AssignLaborForStructure(1, 3);
+
             // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Lake, CellType.Lake);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
+
         }
     }
     public void PlaceHouse(Vector3Int position)
     {
-        if (checkPositionBeforePlacement(position))
+        if (!costmanagement.CanAfford(1000000))
         {
+            Debug.Log("Insufficient funds!");
+
+
+            return;
+        }
+        if (checkPositionBeforePlacement(position) )
+        {
+
             int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, housePrefab[randomIndex].prefab, CellType.Structure);
             AudioPlayer.instance.PlayPlacementSound();
+            costmanagement.DecreaseCost(1000000);
+
         }
     }
 
@@ -215,10 +345,12 @@ public class StructureManager : MonoBehaviour
     {
         if (checkPositionBeforePlacement(position))
         {
-           // int randomIndex = GetRandomWeightedIndex(houseWeights);
+            laborManager.AssignLaborForStructure(1, 3);
+
+            // int randomIndex = GetRandomWeightedIndex(houseWeights);
             placementManager.PlaceObjectOnTheMap(position, Hospital, CellType.Hospital);
             AudioPlayer.instance.PlayPlacementSound();
-            costmanagement.DecreaseCost(10000000);
+            costmanagement.DecreaseCost(1000000);
         }
     }
 

@@ -20,6 +20,10 @@ TagManager:
   - Panchayat
   - School
   - Lake
+  - OverheadTank
+  - Transformer
+  - PublicToilet
+  - CSC
   layers:
   - Default
   - TransparentFX

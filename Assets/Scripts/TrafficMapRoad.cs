@@ -18,7 +18,7 @@ public class TrafficMapRoad : MonoBehaviour
     
 
 
-    public float sphereRadius = 2f;
+    public float sphereRadius = 6f;
     public bool RunLoop = true;
 
     private void Update()
@@ -43,86 +43,66 @@ public class TrafficMapRoad : MonoBehaviour
             }
             else if (collider.CompareTag("Market"))
             {
-                Heat += 7;
+                Heat += 3;
             }
-            else if (collider.CompareTag("Overhead Tank"))
-            {
-                
-
-            }
-            else if (collider.CompareTag("Tap Connection"))
+            else if (collider.CompareTag("OverheadTank"))
             {
 
-            }
-            else if (collider.CompareTag("Water Treatment Plant"))
-            {
+                Heat += 4;
 
             }
+
+
             else if (collider.CompareTag("Transformer"))
             {
+                Heat += 5;
 
             }
-            else if (collider.CompareTag("Wind Mill"))
+
+
+            else if (collider.CompareTag("PublicToilet"))
             {
+                Heat += 2;
 
             }
-            else if (collider.CompareTag("Solar Power Plant"))
+            else if (collider.CompareTag("FireStation"))
             {
+                Heat += 4;
 
             }
-            else if (collider.CompareTag("Biogas Plant"))
+            else if (collider.CompareTag("PostOffice"))
             {
+                Heat += 4;
 
             }
-            else if (collider.CompareTag("Sanitation Plant"))
+            else if (collider.CompareTag("PoliceStation"))
             {
-
-            }
-            else if (collider.CompareTag("Public Toilet"))
-            {
-
-            }
-            else if (collider.CompareTag("Fire Station"))
-            {
-
-            }
-            else if (collider.CompareTag("Post Office"))
-            {
-
-            }
-            else if (collider.CompareTag("Police Station"))
-            {
+                Heat += 6;
 
             }
             else if (collider.CompareTag("CSC"))
             {
+                Heat += 2;
 
             }
-            else if (collider.CompareTag("Bank"))
+
+            else if (collider.CompareTag("Panchayat"))
             {
+                Heat += 1;
 
             }
-            else if (collider.CompareTag("Panchayat Bhavan"))
+
+            else if (collider.CompareTag("AanganWadi"))
             {
-
-            }
-            else if (collider.CompareTag("Cremation Ground"))
-            {
-
-            }
-            else if (collider.CompareTag("Anganwadi"))
-            {
-
-            }
-            else if (collider.CompareTag("School"))
-            {
+                Heat += 4;
 
             }
 
 
-            
 
-  
+
+
+
 
 
             // You can add more conditions for other tags as needed
