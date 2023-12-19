@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100345786477648002}
+  - component: {fileID: 3935163876659439298}
   m_Layer: 0
   m_Name: Street_Deadend
   m_TagString: Untagged
@@ -32,6 +33,24 @@ Transform:
   - {fileID: 1700287040712091775}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3935163876659439298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120765361980748800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4885dcbaf17e43999f6824c301d110d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackMaterial: {fileID: 2100000, guid: fcdc686cd7aa66a4cbb9a7bac20dc9ff, type: 2}
+  GreenHeatMaterial: {fileID: 2100000, guid: 408312bbbe27ff74f946ea5d32386187, type: 2}
+  YellowHeatMaterial: {fileID: 2100000, guid: 50a92d0c9ae4a0f44b77c26e727872c9, type: 2}
+  RedHeatMaterial: {fileID: 2100000, guid: 12c56f3398ee1c046b4e6973bb2ee4b1, type: 2}
+  Heat: 0
+  sphereRadius: 2
 --- !u!1001 &1158018236724629396
 PrefabInstance:
   m_ObjectHideFlags: 0

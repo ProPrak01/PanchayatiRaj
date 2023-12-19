@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class TrafficMapRoad : MonoBehaviour
 {
-   // public Material originalMaterial;
-    //public Material HeatMaterial;
+    public Material blackMaterial;
+    public Material GreenHeatMaterial;
+    public Material YellowHeatMaterial;
+    public Material RedHeatMaterial;
+
 
     public int Heat = 0; // Heat variable to track the cumulative heat
 
     // Define the radius of the imaginary sphere
-    public float sphereRadius = 5f;
+
  
     
+
+
+    public float sphereRadius = 2f;
+    public bool RunLoop = true;
 
     private void Update()
     {
         // Check for objects with specific tags within the sphere
         Collider[] colliders = Physics.OverlapSphere(transform.position, sphereRadius);
         Heat = 0; // Reset heat value in each update
+        int colliderCountVar = colliders.Length;
 
+        
         foreach (var collider in colliders)
         {
-            // Check for specific tags and update the Heat value accordingly
+                // Check for specific tags and update the Heat value accordingly
+
             if (collider.CompareTag("Hospital"))
             {
                 Heat += 1;
@@ -109,11 +119,11 @@ public class TrafficMapRoad : MonoBehaviour
 
             }
 
-<<<<<<< Updated upstream
+
             
-=======
-            else if()
->>>>>>> Stashed changes
+
+  
+
 
             // You can add more conditions for other tags as needed
         }
@@ -122,15 +132,25 @@ public class TrafficMapRoad : MonoBehaviour
         if (Heat >= 10)
         {
             //GetComponent<Renderer>().material.;
-            GetComponent<Renderer>().material.SetFloat("_YourFloatPropertyName", 0.1f);
+            GetComponentInChildren<Renderer>().materials[0] = RedHeatMaterial;
+        }
+        else if(Heat >= 5 && Heat < 10)
+        {
+            GetComponentInChildren<Renderer>().materials[0] = YellowHeatMaterial;
+        }
+        else if(Heat > 0 && Heat <  5)
+        {
+            GetComponentInChildren<Renderer>().materials[0] = GreenHeatMaterial;
+
         }
         else
         {
-            GetComponent<Renderer>().material.SetFloat("_YourFloatPropertyName", 10f);
+            GetComponentInChildren<Renderer>().materials[0] = blackMaterial;
+
         }
 
         // Debug visual of the sphere
-       // DebugDrawSphere(transform.position, sphereRadius, Color.red);
+        // DebugDrawSphere(transform.position, sphereRadius, Color.red);
     }
 
     // Debug draw sphere method

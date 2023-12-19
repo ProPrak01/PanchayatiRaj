@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3418967578031546520}
   m_Layer: 0
   m_Name: WaterSupply
-  m_TagString: Untagged
+  m_TagString: WaterSupply
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

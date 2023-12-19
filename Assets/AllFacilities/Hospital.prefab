@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3660960225876759102}
   m_Layer: 0
   m_Name: Hospital
-  m_TagString: Untagged
+  m_TagString: Hospital
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
