@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ClusterObjectCollector : MonoBehaviour
 {
-    Rules rules;
-     // Start is called before the first frame update
+    Rules rules; 
+
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -17,10 +18,7 @@ public class ClusterObjectCollector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit = castray();
-            if (hit.collider.tag == "gsfjls")
-            {
-              //  hit.collider.gameObject.GetComponent<Rules>().
-            }
+            rules.buildingPos = hit.collider.gameObject.transform.position;
         }
 
         

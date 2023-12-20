@@ -8,7 +8,9 @@ public class PlacementManager : MonoBehaviour
 {
     public ClusterAnalysis algoScript;
     public StructureManager structureManager;
-    
+
+    public Rules rules;
+
     public int width, height;
     Grid placementGrid;
     public TextMeshProUGUI textOutputLocations;
@@ -237,6 +239,8 @@ public class PlacementManager : MonoBehaviour
             // Add a line break for the next key-value pair
             //textOutputLocations.text += "\n";
         }
+
+       // rules.FindCentroidOfHouses(ClusterPoints);
     }
 
     public float[] FindCentroidOfHouses()
